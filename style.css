@@ -1,0 +1,19 @@
+body {
+  width: 500px;
+  height: 1400px;
+  margin: 0 auto;
+}
+
+p {
+  font-family: futura;
+  padding: 10px;
+border: 0.3px solid black;
+color: #0abab5;
+}
+
+h1 {
+  color: black;
+  background-color: white;
+  font-family: futura;
+  position: relative; top: 10px; right: 10px; left: 93px;
+}
