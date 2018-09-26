@@ -1,0 +1,47 @@
+#box2{
+  width: 290px;
+  height: 300px;
+  background-color: #2f7ef0;
+  border-radius: 10px;
+  margin: 0px auto;
+}
+
+#box{
+  width: 250px;
+  height: 290px;
+  background-color: #e3b85a;
+  border-radius: 10px;
+  margin: 0px auto;
+  position: relative;
+  transform: translate(0px,-250px);
+}
+
+#box3{
+  width: 70px;
+  height: 70px;
+  background-color: gray;
+  border-radius: 10px;
+  margin: 0px auto;
+  position: relative;
+  transform: translate(100px, -320px)
+}
+
+#pen{
+  width: 70px;
+  height: 10px;
+  background-color: black;
+  border-radius: 6px;
+  margin: 0px auto;
+  position: relative;
+  transform: translate(120px,-330px);
+}
+
+#penbox{
+  width: 70px;
+  height: 90px;
+  background-color: #000000;
+  border-radius: 8px;
+  margin: 0px auto;
+  position: relative;
+  transform: translate(0px, -250px);
+}
