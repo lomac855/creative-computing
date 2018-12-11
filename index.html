@@ -1,174 +1,187 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
+
+<meta name="color:background" content="#ffffff"/>
+<meta name="color:text" content="#000000"/>
+<meta name="color:body links" content="#fbeccd"/>
+<meta name="color:perma links" content="#fbeccd"/>
+<meta name="color:link hover" content="#000000"/>
+<meta name="color:accent color" content="#fbeccd"/>
+
+<meta name="text:link 1 url" content="link 1 url"/>
+<meta name="text:link 1 tooltip" content="link 1 title"/>
+<meta name="text:link 2 url" content="link 2 url"/>
+<meta name="text:link 2 tooltip" content="link 2 title"/>
+<meta name="text:link 3 url" content="link 3 url"/>
+<meta name="text:link 3 tooltip" content="link 3 title"/>
+<meta name="text:link 4 url" content="link 4 url"/>
+<meta name="text:link 4 tooltip" content="link 4 title"/>
+<meta name="text:link 5 url" content="link 5 url"/>
+
+
     <meta charset="utf-8">
-    <title>HOME</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="interview.css">
+  <title>charlotte's homepage</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <style>
+
+  body{
+    background-color:white;
+    background-attachment:fixed;
+    background-repeat:repeat;
+    font-family: sans-serif;
+    font-size:12px;
+    color:black;
+    text-align:left;
+  }
+
+  a{
+    color: blue;
+    text-decoration:none;
+  }
+
+a:hover{
+    color:red;
+    -webkit-transition: all .7s ease-in-out;
+    -moz-transition: all .7s ease-in-out;
+    -ms-transition: all .7s ease-in-out;
+    -o-transition: all .7s ease-in-out;
+    transition: all .7s ease-in-out;
+  }
+
+a:active,a:focus {
+    outline:0;
+  }
+
+  .sidebar{
+    width:210px;
+    padding:10px;
+    top:145px;
+    left:50px;
+    border:1px solid;
+    background-color: white;
+    position:fixed;
+    z-index:999;
+  }
+
+  #desc{
+    text-align:justify;
+    padding:7px;
+    border-top:1px solid;
+    border-bottom:1px solid;
+  }
+
+  .linkers{
+    margin-top:7px;
+    text-align:center;
+    text-transform:uppercase;
+    line-height:27px;
+    font-size:15px;
+   -webkit-transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -ms-transition: all .2s ease-in-out;
+   -o-transition: all .2s ease-in-out;
+   transition: all .2s ease-in-out;
+ }
+
+ .linkers a{
+    color: red;
+   -webkit-transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -ms-transition: all .2s ease-in-out;
+   -o-transition: all .2s ease-in-out;
+   transition: all .2s ease-in-out;
+   margin:4px;
+ }
+
+.linkers a:hover{
+    color:blue;
+   -webkit-transition: all .2s ease-in-out;
+   -moz-transition: all .2s ease-in-out;
+   -ms-transition: all .2s ease-in-out;
+   -o-transition: all .2s ease-in-out;
+   transition: all .2s ease-in-out;
+ }
+
+ #perma{
+   position:absolute;
+   top:50%;
+   left:50%;
+   width:100px;
+   word-spacing:5px;
+   margin-top:-38px;
+   margin-left:-50px;
+   opacity:0;
+   -webkit-transform: scale(0);
+   text-align:center;
+   -webkit-transition: all .7s ease-in-out;
+   -moz-transition: all .7s ease-in-out;
+   -ms-transition: all .7s ease-in-out;
+   -o-transition: all .7s ease-in-out;
+   transition: all .7s ease-in-out;
+   {block:PermalinkPage}display:none;{/block:PermalinkPage}
+  }
+
+#perma a{
+    background: white;
+    border:1px solid ;
+    padding:6px;
+    line-height:35px;
+    text-transform:uppercase;
+    font-style:italic;
+    color: green;
+   -webkit-transition: all .7s ease-in-out;
+   -moz-transition: all .7s ease-in-out;
+   -ms-transition: all .7s ease-in-out;
+   -o-transition: all .7s ease-in-out;
+   transition: all .7s ease-in-out;
+  }
+
+#perma a:hover{
+    color:orange;
+   -webkit-transition: all .7s ease-in-out;
+   -moz-transition: all .7s ease-in-out;
+   -ms-transition: all .7s ease-in-out;
+   -o-transition: all .7s ease-in-out;
+   transition: all .7s ease-in-out;
+ }
+
+#permas{
+    text-align:right;
+    margin-top:5px;
+    padding-top:5px;
+    border-top:1px solid {color:accent color};
+    {block:PermalinkPage}display:none;{/block:PermalinkPage}
+  }
+
+
+
+
+
+
+
+
+
+  </style>
   </head>
-  <body>
-    <script type='text/javascript'>
-    //<![CDATA[
-    var rate = 50;
-    if (document.getElementById)
-    window.onerror=new Function("return true")
+<body style>
 
-    var objActive; // The object which event occured in
-    var act = 0; // Flag during the action
-    var elmH = 0; // Hue
-    var elmS = 128; // Saturation
-    var elmV = 255; // Value
-    var clrOrg; // A color before the change
-    var TimerID; // Timer ID
-    if (document.all) {
-    document.onmouseover = doRainbowAnchor;
-    document.onmouseout = stopRainbowAnchor;
-    }
-    else if (document.getElementById) {
-    document.captureEvents(Event.MOUSEOVER | Event.MOUSEOUT);
-    document.onmouseover = Mozilla_doRainbowAnchor;
-    document.onmouseout = Mozilla_stopRainbowAnchor;
-    }
-    function doRainbow(obj)
-    {
-    if (act == 0) {
-    act = 1;
-    if (obj)
-    objActive = obj;
-    else
-    objActive = event.srcElement;
-    clrOrg = objActive.style.color;
-    TimerID = setInterval("ChangeColor()",100);
-    }
-    }
-    function stopRainbow()
-    {
-    if (act) {
-    objActive.style.color = clrOrg;
-    clearInterval(TimerID);
-    act = 0;
-    }
-    }
-    function doRainbowAnchor()
-    {
-    if (act == 0) {
-    var obj = event.srcElement;
-    while (obj.tagName != 'A' && obj.tagName != 'BODY') {
-    obj = obj.parentElement;
-    if (obj.tagName == 'A' || obj.tagName == 'BODY')
-    break;
-    }
-    if (obj.tagName == 'A' && obj.href != '') {
-    objActive = obj;
-    act = 1;
-    clrOrg = objActive.style.color;
-    TimerID = setInterval("ChangeColor()",100);
-    }
-    }
-    }
-    function stopRainbowAnchor()
-    {
-    if (act) {
-    if (objActive.tagName == 'A') {
-    objActive.style.color = clrOrg;
-    clearInterval(TimerID);
-    act = 0;
-    }
-    }
-    }
-    function Mozilla_doRainbowAnchor(e)
-    {
-    if (act == 0) {
-    obj = e.target;
-    while (obj.nodeName != 'A' && obj.nodeName != 'BODY') {
-    obj = obj.parentNode;
-    if (obj.nodeName == 'A' || obj.nodeName == 'BODY')
-    break;
-    }
-    if (obj.nodeName == 'A' && obj.href != '') {
-    objActive = obj;
-    act = 1;
-    clrOrg = obj.style.color;
-    TimerID = setInterval("ChangeColor()",100);
-    }
-    }
-    }
-    function Mozilla_stopRainbowAnchor(e)
-    {
-    if (act) {
-    if (objActive.nodeName == 'A') {
-    objActive.style.color = clrOrg;
-    clearInterval(TimerID);
-    act = 0;
-    }
-    }
-    }
-    function ChangeColor()
-    {
-    objActive.style.color = makeColor();
-    }
-    function makeColor()
-    {
-    // Don't you think Color Gamut to look like Rainbow?
-    // HSVtoRGB
-    if (elmS == 0) {
-    elmR = elmV; elmG = elmV; elmB = elmV;
-    }
-    else {
-    t1 = elmV;
-    t2 = (255 - elmS) * elmV / 255;
-    t3 = elmH % 60;
-    t3 = (t1 - t2) * t3 / 60;
-    if (elmH < 60) {
-    elmR = t1; elmB = t2; elmG = t2 + t3;
-    }
-    else if (elmH < 120) {
-    elmG = t1; elmB = t2; elmR = t1 - t3;
-    }
-    else if (elmH < 180) {
-    elmG = t1; elmR = t2; elmB = t2 + t3;
-    }
-    else if (elmH < 240) {
-    elmB = t1; elmR = t2; elmG = t1 - t3;
-    }
-    else if (elmH < 300) {
-    elmB = t1; elmG = t2; elmR = t2 + t3;
-    }
-    else if (elmH < 360) {
-    elmR = t1; elmG = t2; elmB = t1 - t3;
-    }
-    else {
-    elmR = 0; elmG = 0; elmB = 0;
-    }
-    }
-    elmR = Math.floor(elmR).toString(16);
-    elmG = Math.floor(elmG).toString(16);
-    elmB = Math.floor(elmB).toString(16);
-    if (elmR.length == 1) elmR = "0" + elmR;
-    if (elmG.length == 1) elmG = "0" + elmG;
-    if (elmB.length == 1) elmB = "0" + elmB
-    elmH = elmH + rate;
-    if (elmH >= 360)
-    elmH = 0;
-    return '#' + elmR + elmG + elmB;
-    }
-    //]]>
-    </script>
-
-    <h1>CHARLOTTE LOMAS</h1>
-    <p>i don't know what i'm doing</p>
-
-<div id="rounded-box">
-
+  <div class="sidebar">
+    <div id="desc">hello world!<br>my name is charlotte</div>
+  <div class="linkers">
+  <a href="conditional-design.html" title="conditional design">★</a>
+  <a href="interview.html" title="a body of knowledge">✎</a>
+  <a href="still_life/still_life.html" title="still life">✄</a>
+  <a href="s/index.html" title="css poster">♫</a>
+  <a href="/weather/hw.html" title="weather">☼</a>
+  <a href="final_website/final.html" title="final">☾</a>
 </div>
 
-  <ul>
-      <li><a href="conditional-design.html">Conditional Design</a></li>
-      <li><a href="interview.html">A Body of Knowledge</a></li>
-      <li><a href="creative-computing/still_life/still_life.html">Still Life</a></li>
-    </ul>
 
-<p>have a nice day! ヾ(^ω^*) </p>
 
-  </body>
+
+
+
+</script>
+</body>
 </html>
